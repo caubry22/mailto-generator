@@ -92,9 +92,9 @@ function updateLink() {
     let generateLink;
     generateLink = 'mailto:' + mainMail.value;
     if (ccMail.value)
-        generateLink += '&cc:' + ccMail.value;
+        generateLink += '&cc=' + ccMail.value;
     if (bccMail.value)
-        generateLink += '&bcc:' + bccMail.value;
+        generateLink += '&bcc=' + bccMail.value;
     if (subject.value)
         generateLink += '?subject=' + encodeURIComponent(subject.value);
     if (body.value)
