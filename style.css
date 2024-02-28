@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    width: 90vw;
+    height: 80vh;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgb(57, 73, 111);
+    position: relative;
+    background-color: white;
+}
+
+.recipients, #cc, #bcc, .subject, .message {
+    padding: 1%;
+}
+
+.recipients {
+    display: flex;
+}
+
+.recipients .main, .recipients .main input {
+    width: 90%;
+}
+
+label, .message span {
+    font-weight: bold;
+    color: rgb(135, 129, 163);
+}
+
+#cc-btn, #bcc-btn {
+    border: 1px solid rgb(57, 73, 111);
+    background: none;
+    color: rgb(57, 73, 111);
+    padding: 0.2% 1%;
+    margin-right: 1vw;
+    border-radius: 5px;
+}
+
+#cc-btn:hover, #bcc-btn:hover {
+    background-color: rgb(57, 73, 111);
+    border: none;
+    color: white;
+}
+
+#bcc, #cc {
+    display: none;
+}
+
+input, textarea {
+    border: none;
+    color: rgb(57, 73, 111);
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea {
+    outline: none;
+    resize: none;
+}
+
+textarea::placeholder {
+    color: rgb(69, 63, 100);
+    font-size: large;
+}
+
+.message {
+    height: 45%;
+}
+
+.message #mail-body {
+    margin-top: 2vh;
+}
+
+#mail-body {
+    width: 100%;
+    min-height: 100%;
+}
+
+#link {
+    position: absolute;
+    bottom: 5vh;
+    margin: 0 20vw;
+    background-color: rgb(57, 73, 111);
+    border-radius: 20px;
+    padding: 1%;
+}
+
+#link-generated {
+    display: inline-block;
+    min-width: 40vw;
+    max-width: 40vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+    margin-top: 1vh;
+}
+
+#copy-btn {
+    background-color: white;
+    width:8vw;
+    border-radius: 20px;
+    margin: 1% 0.5%;
+    padding: 0.5%;
+    border: none;
+}
+
+#copy-btn:hover {
+    background-color: rgb(205, 239, 239);
+    cursor: pointer;
+}
+

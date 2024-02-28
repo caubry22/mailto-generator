@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mailto Link Generator</title>
+</head>
+<body>
+
+    <main>
+
+        <div class="recipients">
+            <div class="main">
+                <label for="main-mail">To : </label>
+                <input type="email" id="main-mail">
+            </div>
+            <button id="cc-btn">Cc:</button>
+            <button id="bcc-btn">Bcc:</button>
+        </div>
+
+        <div id="cc" style="display: none">
+            <label for="cc-mail">Cc:</label>
+            <input type="email" id="cc-mail">
+        </div>
+
+        <div id="bcc" style="display: none">
+            <label for="bcc-mail">Bcc:</label>
+            <input type="email" id="bcc-mail">
+        </div>
+
+        <div class="subject">
+            <label for="mail-subject">Subject:</label>
+            <input type="text" id="mail-subject">
+        </div>
+
+        <div class="message">
+            <span>Body :</span>
+            <textarea name="" id="mail-body" placeholder="A simple markup generator for mailto links that takes care of formating for you. Just fill out the email and copy your code."></textarea>
+        </div>
+
+        <div id="link" style="display: none;">
+            <span id="link-generated"></span>
+            <button onclick="copyLink()" id="copy-btn">Copy link</button>
+        </div>
+
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
