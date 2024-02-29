@@ -144,10 +144,6 @@ textarea::placeholder {
 }
 
 
-.message {
-    height: 100%;
-}
-
 
 .message #mail-body {
     margin-top: 2vh;
@@ -192,3 +188,13 @@ textarea::placeholder {
     cursor: pointer;
 }
 
+
+@media screen and (max-width: 600px) {
+
+    #link {
+        min-width: 200px;
+        max-width: 400px;
+        position: inherit;
+    }
+    
+}
