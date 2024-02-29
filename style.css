@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: serif;
     box-sizing: border-box;
 }
 
@@ -11,15 +10,79 @@ body {
     align-items:center;
     height: 100vh;
     width: 100vw;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #04143a;
+    line-height: 1.5;
 }
 
 main {
-    width: 90vw;
-    height: 80vh;
+    width: 100vw;
+    height: 90vh;
+}
+
+article {
+    min-height: 100%;
+    max-width: 960px;
+    margin: auto;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+.text-center {
+    text-align: center !important;
+}
+
+header {
+    display: flex;
+    padding: 0 20%;
+    height: 20%;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items:center;
+    margin-bottom: 5vh;
+}
+
+.free-tool {
+    color: #1a53ff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+}
+
+.free-tool:hover {
+        color: #fc4b6d;
+        text-decoration: none;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  color: #04143a;
+}
+
+article .container p {
+    line-height: 1.75rem;
+}
+
+.mail {
+    border: 1px solid #e6e7eb;
     border-radius: 15px;
-    box-shadow: 0 0 15px rgb(57, 73, 111);
-    position: relative;
-    background-color: white;
+    min-height: 70vh;
 }
 
 .recipients, #cc, #bcc, .subject, .message {
@@ -35,21 +98,24 @@ main {
 }
 
 label, .message span {
-    font-weight: bold;
-    color: rgb(135, 129, 163);
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6d757d;
 }
 
 #cc-btn, #bcc-btn {
-    border: 1px solid rgb(57, 73, 111);
-    background: none;
-    color: rgb(57, 73, 111);
+    background-color: #1a53ff;
+    color: white;
+    font-weight: bold;
+    border: none;
     padding: 0.2% 1%;
     margin-right: 1vw;
     border-radius: 5px;
 }
 
 #cc-btn:hover, #bcc-btn:hover {
-    background-color: rgb(57, 73, 111);
+    background-color: #fc4b6d;
+    cursor: pointer;
     border: none;
     color: white;
 }
@@ -60,7 +126,6 @@ label, .message span {
 
 input, textarea {
     border: none;
-    color: rgb(57, 73, 111);
 }
 
 input:focus {
@@ -75,11 +140,14 @@ textarea {
 textarea::placeholder {
     color: rgb(69, 63, 100);
     font-size: large;
+    height: auto;
 }
 
+
 .message {
-    height: 45%;
+    height: 100%;
 }
+
 
 .message #mail-body {
     margin-top: 2vh;
@@ -91,36 +159,35 @@ textarea::placeholder {
 }
 
 #link {
-    position: absolute;
-    bottom: 5vh;
+    position: fixed;
+    top: 85vh;
+    max-width: 500px;
+    border: 1px solid #e6e7eb;
     margin: 0 20vw;
-    background-color: rgb(57, 73, 111);
     border-radius: 20px;
     padding: 1%;
+    justify-content: space-evenly;
 }
 
 #link-generated {
-    display: inline-block;
-    min-width: 40vw;
-    max-width: 40vw;
+    min-width: 70%;
+    max-width: 70%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: white;
     margin-top: 1vh;
 }
 
 #copy-btn {
-    background-color: white;
-    width:8vw;
-    border-radius: 20px;
-    margin: 1% 0.5%;
-    padding: 0.5%;
+    background-color: #1a53ff;
+    width:20%;
+    border-radius: 10px;
+    color: white;
     border: none;
 }
 
 #copy-btn:hover {
-    background-color: rgb(205, 239, 239);
+    background-color: #fc4b6d;
     cursor: pointer;
 }
 

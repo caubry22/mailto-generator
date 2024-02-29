@@ -17,72 +17,29 @@ let link = document.getElementById('link-generated');
 
 let copyBtn = document.getElementById('copy-btn')
 
-ccBtn.onclick = function() {
-    display(cc);
-    if (cc.style.display === 'none')
-        ccMail.value = '';
-    updateLink();
-};
 
-bccBtn.onclick = function() {
-    display(bcc);
-    if (bcc.style.display === 'none')
-        bccMail.value = '';
+ccBtn.addEventListener('click', function() {
+    display(cc);
     updateLink();
-}
+});
+
+bccBtn.addEventListener('click', function() {
+    display(bcc);
+    updateLink();
+});
 
 function display(element) {
     if (element.style.display === "none")
         element.style.display = "block";
     else
         element.style.display = "none";
-}
+};
 
-function isValidEmail(email) {
-    const mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let tabMail = email.split(',');
-    for (let i = 0; i < tabMail.length; i++)
-    {
-        if (mailRegex.test(tabMail[i]) == false && tabMail[i].length > 0)
-            return false;
-    }
-    return true;
-}
+mainMail.addEventListener('keyup', updateLink);
 
-function checkMail(element, isValid) {
-    if (isValid)
-        element.style.color = 'black';
-    else
-        element.style.color = 'brown';
-    updateLink();
-}
+ccMail.addEventListener('keyup', updateLink);
 
-mainMail.addEventListener('keydown', function(event) {
-    if (event.key === ' ')
-        event.preventDefault();
-});
-
-mainMail.onkeyup = function() {
-    checkMail(mainMail, isValidEmail(mainMail.value));
-}
-
-ccMail.addEventListener('keydown', function(event) {
-    if (event.key === ' ')
-        event.preventDefault();
-});
-
-ccMail.onkeyup = function() {
-    checkMail(ccMail, isValidEmail(ccMail.value));
-}
-
-bccMail.addEventListener('keydown', function(event) {
-    if (event.key === ' ')
-        event.preventDefault();
-});
-
-bccMail.onkeyup = function() {
-    checkMail(bccMail, isValidEmail(bccMail.value));
-}
+bccMail.addEventListener('keyup', updateLink);
 
 subject.addEventListener('keyup', updateLink);
 
@@ -91,9 +48,9 @@ body.addEventListener('keyup', updateLink);
 function updateLink() {
     let generateLink;
     generateLink = 'mailto:' + mainMail.value;
-    if (ccMail.value)
+    if (ccMail.value && cc.style.display === 'block')
         generateLink += '&cc=' + ccMail.value;
-    if (bccMail.value)
+    if (bccMail.value && bcc.style.display === 'block')
         generateLink += '&bcc=' + bccMail.value;
     if (subject.value)
         generateLink += '?subject=' + encodeURIComponent(subject.value);
@@ -108,10 +65,7 @@ function updateLink() {
 }
 
 function checkLink() {
-    if (mainMail.value.length > 0 && isValidEmail(mainMail.value)
-        && ((ccMail.value.length > 0 && isValidEmail(ccMail.value)) || ccMail.value.length == 0)
-        && ((bccMail.value.length > 0 && isValidEmail(bccMail.value)) || bccMail.value.length == 0)
-    )
+    if (mainMail.value.length > 0)
         linkDiv.style.display = 'flex';
     else
         linkDiv.style.display = 'none';
