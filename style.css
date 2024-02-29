@@ -147,7 +147,7 @@ textarea::placeholder {
     content: "";
     display: block;
     border-bottom: 1px solid #6d757d50;
-    margin-bottom: 10px; /* Ajuster l'espace entre la ligne et le contenu de la div */
+    margin-bottom: 10px;
 }
 
 
